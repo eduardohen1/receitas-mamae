@@ -1,0 +1,42 @@
+server:
+  servlet:
+    context-path: ${CONTEXT_PATH:/}
+  port: ${SERVER_PORT:8080}
+  max-http-header-size: 500MB
+
+#Configuacoes do servico
+spring:
+  application:
+    name: ${APPLICATION_NAME:receitas}
+  aop:
+    auto: false
+
+  jackson:
+    time-zone: Brazil/East
+    locale: pt_BR
+
+  #configuracoes do banco de dados
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+      #ddl-auto: drop-and-create
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:receitas
+    username: sa
+    password:
+
+  #configuacoes springdoc openapi
+  springdoc:
+    version: '1.0.0'
+    api-docs:
+      path: /api-docs
+    swagger-ui:
+      path: /swagger-ui.html
+      config-url: /api-docs/swagger-config
+      enabled: true
