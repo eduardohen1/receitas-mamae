@@ -35,7 +35,7 @@ function buscarGPT(prompt){
   const url = "https://api.openai.com/v1/chat/completions";
   const headers = {
     "Content-Type": "application/json",
-    "Authorization": `Bearer sk-EfCVEwoWisZmWEtu-YYmRJeIRjkJnAXEnC6VBKW-YoT3BlbkFJe6cwJTmc84VtIkxunzhdoclgoiOjmTKoqiC_E7RFAA`
+    "Authorization": `Bearer <token>`
   };
   const body = JSON.stringify({
       model: "gpt-4",
