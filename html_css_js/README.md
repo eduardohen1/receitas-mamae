@@ -8,8 +8,8 @@ O objetivo deste projeto é capacitar os participantes no uso de ferramentas Web
 
 ## 👨‍💻 Tecnologias Utilizadas
 
-- ![HTML5 Icon](https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg) **HTML5**
-- ![CSS3 Icon](https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg) **CSS3**
-- ![JavaScript Icon](https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png) **JavaScript**
-- ![Bootstrap Icon](https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg) **Bootstrap**
-- ![OpenAI Icon](https://upload.wikimedia.org/wikipedia/commons/4/4f/OpenAI_Logo.svg) **API da OpenAI**
+- <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Icon" width="30" style="vertical-align:middle; margin-right:10px;"> **HTML5**
+- <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS3 Icon" width="30" style="vertical-align:middle; margin-right:10px;"> **CSS3**
+- <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript Icon" width="30" style="vertical-align:middle; margin-right:10px;"> **JavaScript**
+- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap Icon" width="30" style="vertical-align:middle; margin-right:10px;"> **Bootstrap**
+- <img src="https://cdn-icons-png.flaticon.com/512/12222/12222560.png" alt="OpenAI Icon" width="30" style="vertical-align:middle; margin-right:10px;"> **API da OpenAI**
