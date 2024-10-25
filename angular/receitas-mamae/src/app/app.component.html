@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #A0522D;">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" href="/">
+      <img src="assets/images/recipes.png" alt="Receitas da Mamãe" class="me-2" style="height: 30px;">
+      Receitas da Mamãe</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/">
+            <i class="fas fa-home"></i> Início
+          </a>
+        </li>        
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/listar">
+            <i class="fas fa-list"></i> Lista de Receitas
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

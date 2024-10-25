@@ -1,11 +1,14 @@
 package br.com.ehmf.receitas.Service;
 
 import br.com.ehmf.receitas.Enum.TipoReceita;
+import br.com.ehmf.receitas.Model.Ingredientes;
+import br.com.ehmf.receitas.Model.ModoPreparo;
 import br.com.ehmf.receitas.Model.Receitas;
 import br.com.ehmf.receitas.Repository.ReceitasRepository;
 import br.com.ehmf.receitas.Service.Interfaces.ReceitasServicesInterface;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -107,5 +110,96 @@ public class ReceitasService implements ReceitasServicesInterface {
     public List<String> retornaTiposReceitas(){
         List<String> tipos = List.of("Doce", "Salgado", "Bebida", "Outros");
         return tipos;
+    }
+
+    public List<Receitas> iniciarBanco() {
+        try {
+
+            Integer dadosBanco = receitasRepository.findAll().size();
+
+            if(dadosBanco > 0)
+                return receitasRepository.findAll();
+
+            Receitas receitas = new Receitas();
+            receitas.setTipoReceita(TipoReceita.SALGADO);
+            receitas.setTitulo("Bolinho de chuva salgado");
+            receitas.setRendimento("30 porções");
+            receitas.setTempoPreparo("30 minutos");
+            receitas.setObservacoes("Receita fácil e rápida");
+
+            List<Ingredientes> ingredientes = new ArrayList<>();
+            ingredientes.add(new Ingredientes("Farinha de trigo", "2", "Xícaras"));
+            ingredientes.add(new Ingredientes("Ovos", "2", "Unidade"));
+            ingredientes.add(new Ingredientes("Leite", "1", "Xícara"));
+            ingredientes.add(new Ingredientes("Fermento", "1", "Colher de sopa"));
+            ingredientes.add(new Ingredientes("Queijo parmesão ralado", "100", "Gramas"));
+
+            receitas.setIngredientes(ingredientes);
+
+            List<ModoPreparo> modoPreparos = new ArrayList<>();
+            modoPreparos.add(new ModoPreparo("Esquente o leite, mas não levante fervura",1));
+            modoPreparos.add(new ModoPreparo("Misture todos os ingredientes até ficar uma massa homogênea",2));
+            modoPreparos.add(new ModoPreparo("Faça pequenas bolinhas com a massa e frite",3));
+
+            receitas.setModoPreparo(modoPreparos);
+
+            receitasRepository.save(receitas);
+
+            // *******************************************
+            receitas = new Receitas();
+            receitas.setTipoReceita(TipoReceita.DOCE);
+            receitas.setTitulo("Bolo de cenoura");
+            receitas.setRendimento("10 porções");
+            receitas.setTempoPreparo("1 hora");
+            receitas.setObservacoes("Receita fácil e rápida");
+
+            ingredientes = new ArrayList<>();
+            ingredientes.add(new Ingredientes("Cenoura", "3", "Unidades"));
+            ingredientes.add(new Ingredientes("Ovos", "3", "Unidades"));
+            ingredientes.add(new Ingredientes("Óleo", "1", "Xícara"));
+            ingredientes.add(new Ingredientes("Açúcar", "2", "Xícaras"));
+            ingredientes.add(new Ingredientes("Farinha de trigo", "2", "Xícaras"));
+            ingredientes.add(new Ingredientes("Fermento", "1", "Colher de sopa"));
+
+            receitas.setIngredientes(ingredientes);
+
+            modoPreparos = new ArrayList<>();
+            modoPreparos.add(new ModoPreparo("Bata no liquidificador a cenoura, os ovos e o óleo",1));
+            modoPreparos.add(new ModoPreparo("Em uma tigela, misture o açúcar, a farinha e o fermento",2));
+            modoPreparos.add(new ModoPreparo("Junte a mistura do liquidificador com a mistura da tigela",3));
+            modoPreparos.add(new ModoPreparo("Coloque em uma forma untada e leve ao forno por 40 minutos",4));
+
+            receitas.setModoPreparo(modoPreparos);
+
+            receitasRepository.save(receitas);
+            // *******************************************
+
+            receitas = new Receitas();
+            receitas.setTipoReceita(TipoReceita.BEBIDA);
+            receitas.setTitulo("Suco de abacaxi");
+            receitas.setRendimento("1 porção");
+            receitas.setTempoPreparo("5 minutos");
+            receitas.setObservacoes("Receita fácil e rápida");
+
+            ingredientes = new ArrayList<>();
+            ingredientes.add(new Ingredientes("Abacaxi", "1", "Unidade"));
+            ingredientes.add(new Ingredientes("Água", "1", "Xícara"));
+            ingredientes.add(new Ingredientes("Açúcar", "1", "Colher de sopa"));
+
+            receitas.setIngredientes(ingredientes);
+
+            modoPreparos = new ArrayList<>();
+            modoPreparos.add(new ModoPreparo("Descasque o abacaxi e corte em pedaços",1));
+            modoPreparos.add(new ModoPreparo("Bata no liquidificador o abacaxi, a água e o açúcar",2));
+            modoPreparos.add(new ModoPreparo("Coe e sirva",3));
+
+            receitas.setModoPreparo(modoPreparos);
+
+            receitasRepository.save(receitas);
+
+            return receitasRepository.findAll();
+        }catch (Exception e){
+            return null;
+        }
     }
 }

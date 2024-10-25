@@ -33,6 +33,11 @@ public class ModoPreparo {
         this.ordem = ordem;
     }
 
+    public ModoPreparo(String descricao, Integer ordem){
+        this.descricao = descricao;
+        this.ordem = ordem;
+    }
+
     public String getDescricao() {
         return descricao;
     }

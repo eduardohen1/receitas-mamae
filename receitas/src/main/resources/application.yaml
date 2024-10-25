@@ -30,7 +30,6 @@ spring:
     url: jdbc:h2:mem:receitas
     username: sa
     password:
-
   #configuacoes springdoc openapi
   springdoc:
     version: '1.0.0'

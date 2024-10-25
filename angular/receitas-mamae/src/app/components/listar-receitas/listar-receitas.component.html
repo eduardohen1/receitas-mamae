@@ -1,0 +1,66 @@
+<div class="container mt-5">
+    <a href="/" ><img src="assets/images/recipes.png" alt="Receitas da Mamãe" class="img-fluid" style="width: 200px; border: 0;"></a>
+    <h2 class="text-center" style="color: #A0522D;">Receitas Cadastradas</h2>
+    <!-- criar tabela com os campos Titulo, Tipo de receita, tempo preparo-->
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th scope="col">Título</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Tempo de Preparo</th>
+                <th scope="col">...</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let receita of lstReceitas">
+                <td>{{receita.titulo}}</td>
+                <td>{{receita.tipoReceita}}</td>
+                <td>{{receita.tempoPreparo}}</td>
+                <td><button class="btn btn-success" (click)="abrirModal(receita)">
+                    <i class="fas fa-eye"></i> Ver receita
+                </button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="receitaModal" tabindex="-1" aria-labelledby="receitaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="receitaModalLabel">{{ receitaSelecionada?.titulo }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3"><strong>Tipo:</strong> {{ receitaSelecionada?.tipoReceita }}</div>
+                <div class="mb-3"><strong>Tempo de Preparo:</strong> {{ receitaSelecionada?.tempoPreparo }}</div>
+                <div class="mb-3"><strong>Ingredientes:</strong>                     
+                    <div class="mt-3 rounded border bg-light p-4">
+                        <span *ngFor="let ingrediente of receitaSelecionada?.ingredientes; let i = index"
+                            class="badge bg-warning me-2">
+                            <span>{{ingrediente.nome}}, {{ingrediente.quantidade}} {{ingrediente.unidadeMedida}}</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3"><strong>Modo de Preparo:</strong>
+                    <div class="mt-3 rounded border bg-light p-4">
+                        <span *ngFor="let mPreparo of receitaSelecionada?.modoPreparo; let i = index"
+                            class="badge bg-primary me-2">
+                            <span>{{mPreparo.descricao}}</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="mb-3"><strong>Rendimento:</strong> {{ receitaSelecionada?.rendimento }}</div>
+                <div class="mb-3"><strong>Observações:</strong> {{ receitaSelecionada?.observacoes }}</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" (click)="imprimirReceita()">
+                    <i class="fas fa-print"></i> Imprimir</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i> Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -37,6 +37,12 @@ public class Ingredientes {
         this.unidadeMedida = unidadeMedida;
     }
 
+    public Ingredientes(String nome, String quantidade, String unidadeMedida){
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.unidadeMedida = unidadeMedida;
+    }
+
     public String getNome() {
         return nome;
     }

@@ -85,4 +85,16 @@ public class ReceitasController {
         return ResponseEntity.ok(receitasService.retornaTiposReceitas());
     }
 
+    @GetMapping("/iniciarBanco")
+    public ResponseEntity<List<Receitas>> iniciarBanco(){
+        try {
+            List<Receitas> receitas = receitasService.iniciarBanco();
+            if(receitas == null)
+                return ResponseEntity.notFound().build();
+            return ResponseEntity.ok(receitas);
+        } catch (ReceitaException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
 }
