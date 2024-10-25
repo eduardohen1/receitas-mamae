@@ -10,20 +10,16 @@ Foi criado consumo da API da OpenAI via JavaScript.
 
 ## 📁 Folders
 
-### 📂 angular
-![Angular Icon](https://angular.io/assets/images/logos/angular/angular.svg)
+### 📂 angular <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular Icon" width="30" style="vertical-align:middle; margin-right:10px;">
 Este projeto em Angular 15 consome uma API em Java para cadastro de receitas.
 
-### 📂 apostila
-![PDF Icon](https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg)
+### 📂 apostila <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF Icon" width="30" style="vertical-align:middle; margin-right:10px;">
 Esta pasta inclui tutoriais, guias e materiais educacionais para ajudar você a aprender várias linguagens de programação e tecnologias.
 
-### 📂 html_css_js
-![HTML Icon](https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg)
+### 📂 html_css_js <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Icon" width="30" style="vertical-align:middle; margin-right:10px;"> 
 Nesta pasta, você encontrará projetos e recursos relacionados a HTML, CSS e JavaScript, as tecnologias principais para construção de páginas web. Inclui o consumo da API da OpenAI via JavaScript.
 
-### 📂 receitas
-![Java Icon](https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg)
+### 📂 receitas <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg" alt="Java Icon" width="30" style="vertical-align:middle; margin-right:10px;"> 
 Esta pasta contém o projeto de API REST em Java Spring Boot para controle de receitas.
 
 ## Getting Started
